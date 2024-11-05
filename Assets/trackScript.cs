@@ -18,7 +18,7 @@ public class trackScript : MonoBehaviour
     void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs){
         foreach(var trackedImage in eventArgs.added){
             Debug.Log("Image tracked : " + trackedImage.referenceImage.name);
-            trackedImage.transform.localScale = Vector3.one * 2;
+            trackedImage.transform.localScale = Vector3.one;
         }
     }
 }
