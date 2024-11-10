@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ClickHandler : MonoBehaviour, IPointerClickHandler
+public class clickHandler : MonoBehaviour, IPointerClickHandler
 {
     private Boolean isClick = false;
     public void OnPointerClick(PointerEventData eventData)
@@ -15,14 +15,17 @@ public class ClickHandler : MonoBehaviour, IPointerClickHandler
         {
             Manager.current.Count++;
             Renderer renderer = Manager.current.ClickedObject.GetComponent<Renderer>();
-        
-            if(isClick){
-                renderer.material.color = Color.white;
-                isClick = false;
-            }
-            else {
-                renderer.material.color = Color.red;
-                isClick = true;
+            
+            if (renderer != null)
+            {
+                if(isClick){
+                    renderer.material.color = Color.white;
+                    isClick = false;
+                }
+                else {
+                    renderer.material.color = Color.red;
+                    isClick = true;
+                }
             }
         }
     }

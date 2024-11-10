@@ -9,9 +9,6 @@ public class Manager : MonoBehaviour
     private int count = 0;
     private GameObject clickedObject;
     public static Manager current;
-    private bool isDetected = false;
-
-    private bool isOpen = false;
 
     private void Awake(){
         if (current == null){
@@ -26,30 +23,10 @@ public class Manager : MonoBehaviour
         onCountChange?.Invoke(newcount);
     }
 
-    public event Action<bool> onDetectionChange;
-    public void DetectionChange(bool newDetection){
-        onDetectionChange?.Invoke(newDetection);
-    }
-
     public event Action<GameObject> onObjectChange;
     public void ObjectChange(GameObject newObject){
         onObjectChange?.Invoke(newObject);
     }
-
-    public event Action<bool> onClickOnChest;
-    public void ClickOnChest(bool isOpen){
-        onClickOnChest?.Invoke(isOpen);
-    }
-
-    public bool IsOpen{
-        get=>isOpen;
-        set{
-            isOpen = value;
-            ClickOnChest(value);
-        }
-    }
-
-    public event Action<bool> onOpeningChest;
 
     public GameObject ClickedObject{
         get=>clickedObject;
@@ -64,14 +41,6 @@ public class Manager : MonoBehaviour
         set{
             count = value;
             CountChange(value);
-        }
-    }
-
-    public bool IsDetected{
-        get=>isDetected;
-        set{
-            isDetected = value;
-            DetectionChange(value);
         }
     }
 }
