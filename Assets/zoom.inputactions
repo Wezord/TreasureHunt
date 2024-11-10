@@ -1,0 +1,67 @@
+{
+    "name": "zoom",
+    "maps": [
+        {
+            "name": "PlayerZoom",
+            "id": "6aeb1a42-ca5f-4a22-94a1-1b265b322f30",
+            "actions": [
+                {
+                    "name": "Pitch [Touch]",
+                    "type": "Value",
+                    "id": "4b95efa2-2c2c-4a3c-b5d7-add5eb7c8f99",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Two Modifiers",
+                    "id": "db30982e-81d1-4c60-92f6-39865f608f94",
+                    "path": "TwoModifiers",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch [Touch]",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier1",
+                    "id": "758d5049-db7a-4448-8204-bff9b6b1f246",
+                    "path": "<Touchscreen>/touch0/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch [Touch]",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "modifier2",
+                    "id": "6f85762b-ee85-4acf-a5a2-cc8c8b021be8",
+                    "path": "<Touchscreen>/touch1/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch [Touch]",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "a880f8bf-075f-4448-a050-0ebb85a5642d",
+                    "path": "<Touchscreen>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch [Touch]",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
