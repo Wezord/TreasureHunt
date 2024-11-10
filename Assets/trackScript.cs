@@ -13,11 +13,13 @@ public class trackScript : MonoBehaviour
 
     void OnDisable(){
         trackedImageManager.trackedImagesChanged -= OnTrackedImagesChanged;
+        Manager.current.IsDetected = false;
     }
 
     void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs){
         foreach(var trackedImage in eventArgs.added){
             Debug.Log("Image tracked : " + trackedImage.referenceImage.name);
         }
+        Manager.current.IsDetected = true;
     }
 }
